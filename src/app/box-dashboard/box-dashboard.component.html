@@ -1,0 +1,75 @@
+<header>
+  <div class="container">
+    <a href="#" routerLink="/" class="logo">Really fun and beautiful box page :)</a>
+    <nav>
+      <ul>
+        <li>
+          <a (click)="clickAddBox()" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Add more boxes :D
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<table class = "table mt -3">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Size</th>
+    <th scope="col">Material</th>
+    <th scope="col">Price</th>
+    <th scope="col">Amount</th>
+    <th scope= "col"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let row of boxData" >
+    <td>{{row.id}}</td>
+    <td>{{row.size}}</td>
+    <td>{{row.material}}</td>
+    <td>{{row.price}}</td>
+    <td>{{row.amount}}</td>
+    <td>
+      <button (click)="onEdit(row)" data-bs-toggle="modal" data-bs-target="#exampleModal" class = "btn btn-info">Edit</button>
+      <button (click)="deleteBox(row)" class = "btn btn-danger mx-3">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="logo" >New Box</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <div class="mb-3">
+            <label for="sizeInput" class="form-label">Size</label>
+            <input type="text" formControlName="size" class="form-control" id="sizeInput" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="materialInput" class="form-label">Material</label>
+            <input type="text" formControlName="material" class="form-control" id="materialInput" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="priceInput" class="form-label">Price</label>
+            <input type="text" formControlName="price" class="form-control" id="priceInput">
+          </div>
+          <div class="mb-3">
+            <label for="amountInput" class="form-label">Amount</label>
+            <input type="text" formControlName="amount" class="form-control" id="amountInput" aria-describedby="emailHelp">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id ="close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" *ngIf="showAdd" (click)="postBoxDetails()" class="btn btn-primary">Add</button>
+        <button type="button" *ngIf="showUpdate" (click)="updateBoxDetails()" class="btn btn-primary">Update</button>
+      </div>
+    </div>
+  </div>
+</div>

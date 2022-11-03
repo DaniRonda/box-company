@@ -1,0 +1,33 @@
+header{
+  background: antiquewhite;
+  padding: 0;
+  border-bottom: 1px solid darkslategrey;
+}
+
+a{
+  color: cadetblue;
+}
+a:hover {
+  background: antiquewhite;
+  color: coral;
+}
+.container{
+  margin:0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+a.logo{
+  font-weight: bold;
+  padding: 1em;
+}
+
+nav ul{
+  list-style-type: none;
+}
+nav ul li a {
+  padding: 1em;
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+}

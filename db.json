@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "size": "69x69",
+      "material": "Metal",
+      "price": "666dkk",
+      "amount": "420"
+    },
+    {
+      "id": 3,
+      "size": "test",
+      "material": "test",
+      "price": "test",
+      "amount": "test"
+    },
+    {
+      "id": 4,
+      "size": "420x420",
+      "material": "Wood",
+      "price": "500dkk",
+      "amount": "45"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
